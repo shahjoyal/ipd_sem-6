@@ -11,6 +11,9 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 face_exp_model = model_from_json(open("facial_expression_model_structure.json","r",encoding="utf-8").read())
 face_exp_model.load_weights('facial_expression_model_weights.h5')
 
+# Declare the emotions label
+emotions_label = ('angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral')
+
 # Function to classify review sentiment
 def review_rating(review):
     sid = SentimentIntensityAnalyzer()
